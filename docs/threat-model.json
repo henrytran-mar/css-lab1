@@ -17,7 +17,7 @@
   "moi_de_doa": [
     {
       "ma": "M01",
-      "phat_bieu": "Một người dùng ẩn danh có thể đọc toàn bộ bảng tài khoản khách hàng nếu máy chủ ứng dụng nối tham số tìm kiếm sản phẩm thẳng vào câu lệnh SQL mà không dùng truy vấn tham số hóa.",
+      "phat_bieu": "Nếu tôi nhập một đoạn mã lạ vào ô tìm kiếm sản phẩm mà máy chủ nối thẳng nó vào câu lệnh SQL, thì người dùng ẩn danh có thể đọc được toàn bộ bảng tài khoản khách hàng.",
       "nguyen_ly": 5,
       "attack": "T1190",
       "tac_dong": 5,
@@ -25,7 +25,7 @@
     },
     {
       "ma": "M02",
-      "phat_bieu": "Một khách hàng đã đăng nhập có thể xem đơn hàng của khách hàng khác nếu anh ta thay mã đơn hàng trong địa chỉ URL vì máy chủ không xác minh quyền sở hữu của đơn hàng đó.",
+      "phat_bieu": "Một khách hàng đã đăng nhập có thể xem chi tiết đơn hàng của người khác nếu anh ta sửa số mã đơn hàng trên đường dẫn, vì máy chủ lấy đơn hàng theo mã mà không kiểm tra người xem có phải chủ của nó.",
       "nguyen_ly": 2,
       "attack": "T1530",
       "tac_dong": 4,
@@ -33,7 +33,7 @@
     },
     {
       "ma": "M03",
-      "phat_bieu": "Đánh giá sản phẩm của một khách hàng ác ý chứa kịch bản độc hại chạy trong trình duyệt của người xem khác nếu máy chủ lưu lại đánh giá mà không mã hóa đầu ra khi hiển thị.",
+      "phat_bieu": "Khi một người dùng khác đọc đánh giá sản phẩm của tôi, nếu tôi chèn thẻ kịch bản vào nội dung đánh giá và máy chủ hiển thị nguyên văn thì kịch bản độc hại đó chạy ngay trong trình duyệt của họ.",
       "nguyen_ly": 3,
       "attack": "T1059.007",
       "tac_dong": 4,
@@ -41,7 +41,7 @@
     },
     {
       "ma": "M04",
-      "phat_bieu": "Kẻ tấn công có thể đăng nhập vào tài khoản quản trị nếu mật khẩu mặc định của tài khoản vẫn còn giá trị vì hệ thống không bắt thay đổi mật khẩu ngay lần đăng nhập đầu tiên.",
+      "phat_bieu": "Tôi thử đăng nhập tài khoản quản trị bằng cặp tên và mật khẩu mặc định, nếu hệ thống vẫn nhận chúng vì chưa từng bắt đổi thì ai biết mật khẩu mặc định cũng vào được.",
       "nguyen_ly": 4,
       "attack": "T1110",
       "tac_dong": 5,
@@ -49,7 +49,7 @@
     },
     {
       "ma": "M05",
-      "phat_bieu": "Mật khẩu và mã thẻ thanh toán của khách hàng được lưu dạng chữ rõ trong cơ sở dữ liệu nếu đội phát triển không mã hóa hoặc băm dữ liệu nhạy cảm khi ghi bảng tài khoản.",
+      "phat_bieu": "Khi tôi đọc trực tiếp bảng tài khoản trong cơ sở dữ liệu, nếu mật khẩu và mã thẻ thanh toán nằm dạng chữ rõ chứ không phải băm hay mã hóa thì kẻ chiếm được cơ sở dữ liệu sẽ đọc hết dữ liệu nhạy cảm.",
       "nguyen_ly": 2,
       "attack": "T1552",
       "tac_dong": 5,
@@ -57,7 +57,7 @@
     },
     {
       "ma": "M06",
-      "phat_bieu": "Kịch bản từ một thư viện giao diện bên thứ ba bị nhiễm độc chạy với quyền của trình duyệt người dùng nếu trang web nhúng thư viện đó mà không so khớp vết băm nguồn gốc.",
+      "phat_bieu": "Khi tôi mở trang bán hàng, nếu trang nhúng một thư viện bên thứ ba đã bị đổi trộm nội dung mà không kiểm tra vết băm nguồn gốc thì mã độc trong thư viện đó chạy với quyền của trình duyệt tôi.",
       "nguyen_ly": 6,
       "attack": "T1195",
       "tac_dong": 3,
@@ -65,7 +65,7 @@
     },
     {
       "ma": "M07",
-      "phat_bieu": "Một người dùng ẩn danh có thể thu thập chi tiết cấu hình nội bộ của hệ thống nếu trang lỗi của máy chủ trả về toàn bộ thông tin truy vết khi một yêu cầu bất thường gây lỗi.",
+      "phat_bieu": "Tôi cố tình gửi một yêu cầu sai định dạng, nếu trang lỗi của máy chủ hiện đầy đủ thông tin truy vết kèm đường dẫn thư mục thì người dùng ẩn danh thu thập được cấu hình nội bộ.",
       "nguyen_ly": 1,
       "attack": "T1592",
       "tac_dong": 3,
@@ -73,7 +73,7 @@
     },
     {
       "ma": "M08",
-      "phat_bieu": "Cookie phiên không được đánh dấu an toàn và ẩn với mã kịch bản nếu nhà phát triển không bật thuộc tính cờ bảo mật, nên kẻ tấn công chiếm được phiên khi lưu lượng đi qua kết nối không mã hóa.",
+      "phat_bieu": "Khi tôi đăng nhập qua kết nối không mã hóa, nếu cookie phiên không có cờ an toàn và cờ ẩn khỏi kịch bản thì kẻ nghe lén mạng chiếm được phiên của tôi.",
       "nguyen_ly": 3,
       "attack": "T1539",
       "tac_dong": 4,
@@ -85,19 +85,19 @@
       "ma": "M02",
       "chi_phi": 8,
       "don_vi": "ngày công",
-      "can_cu": "Dựa trên việc viết và kiểm thử bộ kiểm tra quyền sở hữu cho mọi truy vấn đơn hàng, ước lượng tám ngày công cho một lập trình viên."
+      "can_cu": "Tôi ước lượng dựa trên việc viết và kiểm thử bộ kiểm tra quyền sở hữu cho mọi truy vấn đơn hàng, mất khoảng tám ngày công của một lập trình viên."
     },
     {
       "ma": "M01",
       "chi_phi": 5,
       "don_vi": "ngày công",
-      "can_cu": "Ước lượng dựa trên việc chuyển toàn bộ truy vấn sang tham số hóa và chạy kiểm thử hồi quy, khoảng năm ngày công cho một lập trình viên."
+      "can_cu": "Tôi ước lượng dựa trên việc đổi toàn bộ truy vấn sang tham số hóa rồi chạy lại kiểm thử hồi quy, khoảng năm ngày công."
     },
     {
       "ma": "M05",
       "chi_phi": 10,
       "don_vi": "ngày công",
-      "can_cu": "Ước lượng dựa trên việc triển khai băm mật khẩu, mã hóa dữ liệu thanh toán và di trú dữ liệu hiện có, cần khoảng mười ngày công."
+      "can_cu": "Tôi ước lượng dựa trên việc băm mật khẩu, mã hóa dữ liệu thanh toán và di trú dữ liệu cũ, cần cỡ mười ngày công."
     }
   ]
 }
