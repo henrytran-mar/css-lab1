@@ -1,0 +1,103 @@
+{
+  "he_thong": "Trang bán hàng trực tuyến cho phép khách xem sản phẩm, đặt hàng và thanh toán",
+  "thanh_phan": [
+    {
+      "ten": "Trình duyệt",
+      "vai_tro": "Giao diện người dùng, gửi yêu cầu HTTP tới máy chủ ứng dụng và hiển thị kết quả."
+    },
+    {
+      "ten": "Máy chủ ứng dụng",
+      "vai_tro": "Xử lý logic nghiệp vụ, xác thực phiên và truy vấn hoặc ghi cơ sở dữ liệu theo yêu cầu."
+    },
+    {
+      "ten": "Cơ sở dữ liệu",
+      "vai_tro": "Lưu trữ tài khoản khách hàng, dữ liệu sản phẩm và danh sách đơn hàng của hệ thống."
+    }
+  ],
+  "moi_de_doa": [
+    {
+      "ma": "M01",
+      "phat_bieu": "Một người dùng ẩn danh có thể đọc toàn bộ bảng tài khoản khách hàng nếu máy chủ ứng dụng nối tham số tìm kiếm sản phẩm thẳng vào câu lệnh SQL mà không dùng truy vấn tham số hóa.",
+      "nguyen_ly": 5,
+      "attack": "T1190",
+      "tac_dong": 5,
+      "kha_nang": 3
+    },
+    {
+      "ma": "M02",
+      "phat_bieu": "Một khách hàng đã đăng nhập có thể xem đơn hàng của khách hàng khác nếu anh ta thay mã đơn hàng trong địa chỉ URL vì máy chủ không xác minh quyền sở hữu của đơn hàng đó.",
+      "nguyen_ly": 2,
+      "attack": "T1530",
+      "tac_dong": 4,
+      "kha_nang": 4
+    },
+    {
+      "ma": "M03",
+      "phat_bieu": "Đánh giá sản phẩm của một khách hàng ác ý chứa kịch bản độc hại chạy trong trình duyệt của người xem khác nếu máy chủ lưu lại đánh giá mà không mã hóa đầu ra khi hiển thị.",
+      "nguyen_ly": 3,
+      "attack": "T1059.007",
+      "tac_dong": 4,
+      "kha_nang": 3
+    },
+    {
+      "ma": "M04",
+      "phat_bieu": "Kẻ tấn công có thể đăng nhập vào tài khoản quản trị nếu mật khẩu mặc định của tài khoản vẫn còn giá trị vì hệ thống không bắt thay đổi mật khẩu ngay lần đăng nhập đầu tiên.",
+      "nguyen_ly": 4,
+      "attack": "T1110",
+      "tac_dong": 5,
+      "kha_nang": 2
+    },
+    {
+      "ma": "M05",
+      "phat_bieu": "Mật khẩu và mã thẻ thanh toán của khách hàng được lưu dạng chữ rõ trong cơ sở dữ liệu nếu đội phát triển không mã hóa hoặc băm dữ liệu nhạy cảm khi ghi bảng tài khoản.",
+      "nguyen_ly": 2,
+      "attack": "T1552",
+      "tac_dong": 5,
+      "kha_nang": 3
+    },
+    {
+      "ma": "M06",
+      "phat_bieu": "Kịch bản từ một thư viện giao diện bên thứ ba bị nhiễm độc chạy với quyền của trình duyệt người dùng nếu trang web nhúng thư viện đó mà không so khớp vết băm nguồn gốc.",
+      "nguyen_ly": 6,
+      "attack": "T1195",
+      "tac_dong": 3,
+      "kha_nang": 3
+    },
+    {
+      "ma": "M07",
+      "phat_bieu": "Một người dùng ẩn danh có thể thu thập chi tiết cấu hình nội bộ của hệ thống nếu trang lỗi của máy chủ trả về toàn bộ thông tin truy vết khi một yêu cầu bất thường gây lỗi.",
+      "nguyen_ly": 1,
+      "attack": "T1592",
+      "tac_dong": 3,
+      "kha_nang": 4
+    },
+    {
+      "ma": "M08",
+      "phat_bieu": "Cookie phiên không được đánh dấu an toàn và ẩn với mã kịch bản nếu nhà phát triển không bật thuộc tính cờ bảo mật, nên kẻ tấn công chiếm được phiên khi lưu lượng đi qua kết nối không mã hóa.",
+      "nguyen_ly": 3,
+      "attack": "T1539",
+      "tac_dong": 4,
+      "kha_nang": 3
+    }
+  ],
+  "chon_xu_ly": [
+    {
+      "ma": "M02",
+      "chi_phi": 8,
+      "don_vi": "ngày công",
+      "can_cu": "Dựa trên việc viết và kiểm thử bộ kiểm tra quyền sở hữu cho mọi truy vấn đơn hàng, ước lượng tám ngày công cho một lập trình viên."
+    },
+    {
+      "ma": "M01",
+      "chi_phi": 5,
+      "don_vi": "ngày công",
+      "can_cu": "Ước lượng dựa trên việc chuyển toàn bộ truy vấn sang tham số hóa và chạy kiểm thử hồi quy, khoảng năm ngày công cho một lập trình viên."
+    },
+    {
+      "ma": "M05",
+      "chi_phi": 10,
+      "don_vi": "ngày công",
+      "can_cu": "Ước lượng dựa trên việc triển khai băm mật khẩu, mã hóa dữ liệu thanh toán và di trú dữ liệu hiện có, cần khoảng mười ngày công."
+    }
+  ]
+}
